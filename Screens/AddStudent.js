@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, Alert } from "react-native";
 import { AddStudstyles, styles } from "../style/styles";
 import { TextField } from "../Components/textField";
 import { useState } from "react";
-import ButtonSmall from "../Components/ButtonSmall";
+import ButtonLarge from "../Components/ButtonLarge";
 
 export default function AddStudent({ navigation }) {
   const [Name, setName] = useState("");
@@ -65,7 +65,7 @@ export default function AddStudent({ navigation }) {
         keybtype={"number-pad"}
       />
 
-      <ButtonSmall
+      <ButtonLarge
         head="Add"
         navigation={navigation}
         ChangeScreen="ScanFinger"

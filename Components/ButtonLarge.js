@@ -1,6 +1,6 @@
 import { TouchableOpacity, Text } from "react-native";
 
-export default function ButtonSmall({ head, navigation, ChangeScreen }) {
+export default function ButtonLarge({ head, navigation, ChangeScreen }) {
   return (
     <TouchableOpacity
       style={{
@@ -17,7 +17,7 @@ export default function ButtonSmall({ head, navigation, ChangeScreen }) {
     >
       <Text
         style={{
-          fontFamily: "Poppins-medium",
+          fontFamily: "Poppins",
           color: "black",
           fontSize: 20,
         }}

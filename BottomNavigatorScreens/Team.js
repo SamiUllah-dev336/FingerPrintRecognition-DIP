@@ -1,6 +1,25 @@
-import { View, Text } from "react-native";
-import { styles } from "../style/styles";
+import GroupMember from "../Components/GroupMember";
+import { ScrollView, View } from "react-native";
+import { TeamStyles } from "../style/styles";
 
 export default function TeamScreen() {
-  return <View style={styles.container}></View>;
+  return (
+    <ScrollView contentContainerStyle={TeamStyles.container}>
+      <GroupMember
+        image={require("../assets/sami.jpeg")}
+        name={"SAMIULLAH"}
+        dev={"Software Developer"}
+      />
+      <GroupMember
+        image={require("../assets/sami.jpeg")}
+        name={"ABDUL QAYYUM"}
+        dev={"Software Developer"}
+      />
+      <GroupMember
+        image={require("../assets/girl.jpg")}
+        name={"Tayyba Tahira"}
+        dev={"Software Developer"}
+      />
+    </ScrollView>
+  );
 }

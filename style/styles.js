@@ -7,9 +7,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    padding: "none",
-    margin: "none",
-    border: "none",
   },
 });
 // team screen stylesheet
@@ -65,5 +62,44 @@ export const BookStyles = StyleSheet.create({
     width: 160,
     height: 270,
     resizeMode: "cover",
+  },
+});
+
+// scanner style
+export const ScannerStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
+  },
+  camera: {
+    width: "70%",
+    height: "60%",
+    marginBottom: 10,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: "row",
+    backgroundColor: "transparent",
+    margin: 64,
+  },
+  button: {
+    flex: 1,
+    alignSelf: "flex-end",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "white",
+  },
+  photo: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "white",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

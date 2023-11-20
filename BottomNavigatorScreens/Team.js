@@ -11,7 +11,7 @@ export default function TeamScreen() {
         dev={"Software Developer"}
       />
       <GroupMember
-        image={require("../assets/sami.jpeg")}
+        image={require("../assets/qayyum.jpg")}
         name={"ABDUL QAYYUM"}
         dev={"Software Developer"}
       />

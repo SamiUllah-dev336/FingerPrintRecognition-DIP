@@ -7,6 +7,9 @@ export const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    padding: "none",
+    margin: "none",
+    border: "none",
   },
 });
 // team screen stylesheet
@@ -41,5 +44,26 @@ export const TeamStyles = StyleSheet.create({
     fontFamily: "Poppins-regular",
     fontSize: 15,
     alignSelf: "center",
+  },
+});
+
+// book style
+export const BookStyles = StyleSheet.create({
+  container: {
+    padding: 10,
+    backgroundColor: "black",
+    flex: 1,
+    alignItems: "center",
+  },
+  main: {
+    borderWidth: 1,
+    marginVertical: 5,
+    marginHorizontal: 5,
+    backgroundColor: "white",
+  },
+  img: {
+    width: 160,
+    height: 270,
+    resizeMode: "cover",
   },
 });

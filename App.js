@@ -5,6 +5,8 @@ const Stack = createNativeStackNavigator();
 
 import { useFonts } from "expo-font";
 // screen
+import AddStudent from "./Screens/AddStudent";
+import ExistingStudent from "./Screens/ExistingStudent";
 import { BottomNavigator } from "./Screens/BottomTab";
 
 export default function App() {
@@ -28,6 +30,8 @@ export default function App() {
           headerTitleStyle: { fontFamily: "Poppins-exbold" },
         }}
       >
+        <Stack.Screen name="AddStudent" component={AddStudent} />
+        <Stack.Screen name="ScanFinger" component={ExistingStudent} />
         <Stack.Screen name="Advanced LMS" component={BottomNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

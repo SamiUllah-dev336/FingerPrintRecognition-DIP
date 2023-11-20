@@ -9,6 +9,16 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+export const AddStudstyles = StyleSheet.create({
+  text: {
+    color: "white",
+    fontFamily: "Poppins-bold",
+    fontSize: 18,
+    alignSelf: "flex-start",
+    marginLeft: 30,
+  },
+});
 // team screen stylesheet
 export const TeamStyles = StyleSheet.create({
   container: {

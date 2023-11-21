@@ -113,3 +113,6 @@ export const ScannerStyles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+//add student styles
+export const StudentsStyles = StyleSheet.create({});

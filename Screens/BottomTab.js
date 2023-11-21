@@ -2,14 +2,14 @@ import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Entypo";
 import Icon1 from "react-native-vector-icons/MaterialIcons";
-import Icon2 from "react-native-vector-icons/MaterialCommunityIcons";
+import Icon3 from "react-native-vector-icons/AntDesign";
 
 const Bottom = createBottomTabNavigator();
 // screens
 import HomeScreen from "../BottomNavigatorScreens/Home";
 import AboutScreen from "../BottomNavigatorScreens/About";
 import BooksScreen from "../BottomNavigatorScreens/Books";
-import ScannerScreen from "../BottomNavigatorScreens/Scanner";
+import StudentsScreen from "../BottomNavigatorScreens/Students";
 import TeamScreen from "../BottomNavigatorScreens/Team";
 
 export const BottomNavigator = () => {
@@ -43,12 +43,12 @@ export const BottomNavigator = () => {
       />
 
       <Bottom.Screen
-        name="Scan"
-        component={ScannerScreen}
+        name="Students"
+        component={StudentsScreen}
         options={{
           headerShown: false,
           tabBarIcon: () => {
-            return <Icon2 name="qrcode-scan" size={25} color={"purple"} />;
+            return <Icon3 name="addusergroup" size={25} color={"purple"} />;
           },
         }}
       />

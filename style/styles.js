@@ -116,3 +116,13 @@ export const ScannerStyles = StyleSheet.create({
 
 //add student styles
 export const StudentsStyles = StyleSheet.create({});
+
+export const AboutStyles = StyleSheet.create({
+  container: {
+    padding: 10,
+    backgroundColor: "black",
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+});

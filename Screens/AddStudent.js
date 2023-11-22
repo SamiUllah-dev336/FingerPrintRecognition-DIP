@@ -1,14 +1,23 @@
 import { View, Text, TouchableOpacity, Alert } from "react-native";
 import { AddStudstyles, styles } from "../style/styles";
 import { TextField } from "../Components/textField";
-import { useState } from "react";
+import React, { useState } from "react";
 import ButtonLarge from "../Components/ButtonLarge";
+
+// state management
+import { GlobalContext } from "../StateManagement/GlobalProvider";
 
 export default function AddStudent({ navigation }) {
   const [Name, setName] = useState("");
   const [studentId, setStudentID] = useState("");
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
+
+  // For contect API
+  // const [GlobalName, GlobalSetName] = React.useContext(GlobalContext);
+  // const [GlobalStudentId, GlobalSetStudentID] = React.useContext(GlobalContext);
+  // const [GlobalPhone, GlobalSetPhone] = React.useContext(GlobalContext);
+  // const [GlobalEmail, GlobalSetEmail] = React.useContext(GlobalContext);
 
   // for phone number
   const handleTextChange = (newText) => {

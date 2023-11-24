@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export default function DecideStudent({ navigation }) {
   const fetchAPI = async () => {
     try {
-      const res = await axios.get("http://192.168.10.9:4000/sami");
+      const res = await axios.get("http://192.168.10.9:4000/Student/Api");
       console.log(res.data);
     } catch (error) {
       console.log("what is error", error);

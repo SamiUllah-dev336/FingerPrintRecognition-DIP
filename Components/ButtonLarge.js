@@ -1,29 +1,46 @@
-import { TouchableOpacity, Text } from "react-native";
+import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function ButtonLarge({ head, navigation, ChangeScreen }) {
-  return (
-    <TouchableOpacity
-      style={{
-        backgroundColor: "lightblue",
-        borderWidth: 1,
-        marginTop: 10,
-        borderRadius: 10,
-        width: "85%",
-        height: "8%",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onPress={() => navigation.navigate(ChangeScreen)}
-    >
-      <Text
-        style={{
-          fontFamily: "Poppins",
-          color: "black",
-          fontSize: 20,
+export default function ButtonLarge({ head, navigation, ChangeScreen, func }) {
+  if (head == "Add") {
+    return (
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          func();
+          navigation.navigate(ChangeScreen);
         }}
       >
-        {head}
-      </Text>
-    </TouchableOpacity>
-  );
+        <Text style={styles.text}>{head}</Text>
+      </TouchableOpacity>
+    );
+  } else {
+    return (
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          navigation.navigate(ChangeScreen);
+        }}
+      >
+        <Text style={styles.text}>{head}</Text>
+      </TouchableOpacity>
+    );
+  }
 }
+
+const styles = StyleSheet.create({
+  button: {
+    backgroundColor: "lightblue",
+    borderWidth: 1,
+    marginTop: 10,
+    borderRadius: 10,
+    width: "85%",
+    height: "8%",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  text: {
+    fontFamily: "Poppins",
+    color: "black",
+    fontSize: 20,
+  },
+});

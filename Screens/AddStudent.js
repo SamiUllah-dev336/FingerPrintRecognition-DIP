@@ -1,11 +1,19 @@
-import { View, Text, TouchableOpacity, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+} from "react-native";
+import axios from "axios";
 import { AddStudstyles, styles } from "../style/styles";
 import { TextField } from "../Components/textField";
 import React, { useState } from "react";
-import ButtonLarge from "../Components/ButtonLarge";
+//import ButtonLarge from "../Components/ButtonLarge";
 
-// state management
-import { GlobalContext } from "../StateManagement/GlobalProvider";
+import { AddStudentApi } from "../AxiosFetchAPIS/AddStudentApi";
+import ButtonLarge from "../Components/ButtonLarge";
 
 export default function AddStudent({ navigation }) {
   const [Name, setName] = useState("");
@@ -13,17 +21,16 @@ export default function AddStudent({ navigation }) {
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
 
-  // For contect API
-  // const [GlobalName, GlobalSetName] = React.useContext(GlobalContext);
-  // const [GlobalStudentId, GlobalSetStudentID] = React.useContext(GlobalContext);
-  // const [GlobalPhone, GlobalSetPhone] = React.useContext(GlobalContext);
-  // const [GlobalEmail, GlobalSetEmail] = React.useContext(GlobalContext);
+  const Add = () => {
+    AddStudentApi(Name, studentId, Email, Phone);
+  };
 
   // for phone number
   const handleTextChange = (newText) => {
     // Remove any non-numeric characters from the input
     const numericValue = newText.replace(/[^0-9]/g, "");
-    setPhone(numericValue.slice(0, 11));
+    const phone = numericValue.slice(0, 11);
+    setPhone(phone);
   };
   const handleTextChange1 = (newText) => {
     // Remove any numeric from the input
@@ -31,20 +38,11 @@ export default function AddStudent({ navigation }) {
     setName(numericValue);
   };
 
-  //   const disab = () => {
-  //     return !Name || !Email || !Phone || !studentId;
-  //   };
-
-  //   if (disab()) {
-  //     Alert.alert("Fields are empty");
-  //     return;
-  //   } else if (Phone.length < 11) {
-  //     Alert.alert("Number Length must be 11");
-  //     return;
-  //   }
-
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
       <Text style={AddStudstyles.text}>Name</Text>
       <TextField
         label={"e.g.SAMI ULLAH"}
@@ -70,15 +68,16 @@ export default function AddStudent({ navigation }) {
       <TextField
         label={"e.g.03089789783"}
         value={Phone}
-        onChangeText={handleTextChange}
+        onChangeText={(Phone) => setPhone(Phone)}
         keybtype={"number-pad"}
       />
 
       <ButtonLarge
         head="Add"
         navigation={navigation}
-        ChangeScreen="ScanFinger"
+        ChangeScreen={"ScanFinger"}
+        func={Add}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 }

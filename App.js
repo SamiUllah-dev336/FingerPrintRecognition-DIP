@@ -9,6 +9,7 @@ import DecideStudent from "./Screens/DecideStudent";
 import AddStudent from "./Screens/AddStudent";
 import ExistingStudent from "./Screens/ExistingStudent";
 import { BottomNavigator } from "./Screens/BottomTab";
+import { GlobalProvider } from "./StateManagement/GlobalProvider";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,20 +23,22 @@ export default function App() {
     return undefined;
   }
   return (
-    <NavigationContainer>
-      <StatusBar backgroundColor="#301934" />
-      <Stack.Navigator
-        screenOptions={{
-          headerStyle: { backgroundColor: "purple" },
-          headerTintColor: "white",
-          headerTitleStyle: { fontFamily: "Poppins-exbold" },
-        }}
-      >
-        <Stack.Screen name="Confirm from Student" component={DecideStudent} />
-        <Stack.Screen name="AddStudent" component={AddStudent} />
-        <Stack.Screen name="ScanFinger" component={ExistingStudent} />
-        <Stack.Screen name="Advanced LMS" component={BottomNavigator} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GlobalProvider>
+      <NavigationContainer>
+        <StatusBar backgroundColor="#301934" />
+        <Stack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: "purple" },
+            headerTintColor: "white",
+            headerTitleStyle: { fontFamily: "Poppins-exbold" },
+          }}
+        >
+          <Stack.Screen name="Confirm from Student" component={DecideStudent} />
+          <Stack.Screen name="AddStudent" component={AddStudent} />
+          <Stack.Screen name="ScanFinger" component={ExistingStudent} />
+          <Stack.Screen name="Advanced LMS" component={BottomNavigator} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GlobalProvider>
   );
 }

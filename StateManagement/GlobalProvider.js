@@ -3,10 +3,10 @@ import React from "react";
 export const GlobalContext = React.createContext();
 
 export const GlobalProvider = ({ children }) => {
-  const [GlobalName, GlobalSetName] = useState("");
-  const [GlobalStudentId, GlobalSetStudentID] = useState("");
-  const [GlobalPhone, GlobalSetPhone] = useState("");
-  const [GlobalEmail, GlobalSetEmail] = useState("");
+  const [GlobalName, GlobalSetName] = React.useState("");
+  const [GlobalStudentId, GlobalSetStudentID] = React.useState("");
+  const [GlobalPhone, GlobalSetPhone] = React.useState("");
+  const [GlobalEmail, GlobalSetEmail] = React.useState("");
 
   return (
     <GlobalContext.Provider

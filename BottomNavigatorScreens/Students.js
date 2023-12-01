@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, FlatList } from "react-native";
 import { StudentsStyles } from "../style/styles";
 import { getStudentsApi } from "../AxiosFetchAPIS/StudentApi's";
+import { CustomText } from "../Components/CustomText";
 
 export default function StudentsScreen({ navigation }) {
   const [data, setData] = useState([]);
@@ -10,7 +11,7 @@ export default function StudentsScreen({ navigation }) {
   const fetchData = async () => {
     try {
       const students = await getStudentsApi();
-      setData(students.Data); // Assuming the data is stored in the 'Data' property
+      setData(students.Data); // As students are stored in a Data
     } catch (error) {
       console.error("Error fetching students:", error);
     }
@@ -31,31 +32,10 @@ export default function StudentsScreen({ navigation }) {
           horizontal={false}
           renderItem={({ item }) => (
             <View style={StudentsStyles.main}>
-              <View style={StudentsStyles.OuterView}>
-                <Text style={StudentsStyles.heading}>Name</Text>
-                <Text style={StudentsStyles.content}>{item.name}</Text>
-              </View>
-
-              <View style={StudentsStyles.OuterView}>
-                <Text style={StudentsStyles.heading}>Student ID</Text>
-                <Text style={StudentsStyles.content}>{item.sid}</Text>
-              </View>
-
-              <View style={StudentsStyles.OuterView}>
-                <Text style={StudentsStyles.heading}>Phone</Text>
-                <Text style={StudentsStyles.content}>{item.phone}</Text>
-              </View>
-
-              <View
-                style={{
-                  padding: 10,
-                  justifyContent: "space-around",
-                  alignItems: "center",
-                }}
-              >
-                <Text style={StudentsStyles.heading}>Email</Text>
-                <Text style={StudentsStyles.content}>{item.email}</Text>
-              </View>
+              <CustomText heading="Name" content={item.name} />
+              <CustomText heading="Student ID" content={item.sid} />
+              <CustomText heading="Phone" content={item.phone} />
+              <CustomText heading="Email" content={item.email} />
             </View>
           )}
         />

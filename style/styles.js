@@ -20,21 +20,6 @@ export const AddStudstyles = StyleSheet.create({
   },
 });
 
-export const HomeStyles = StyleSheet.create({
-  container: {
-    backgroundColor: "black",
-    flex: 1,
-    alignItems: "center",
-  },
-  student: {
-    marginTop: 10,
-    width: "70%",
-    height: "30%",
-    backgroundColor: "white",
-    borderWidth: 1,
-    borderRadius: 5,
-  },
-});
 // team screen stylesheet
 export const TeamStyles = StyleSheet.create({
   container: {
@@ -130,7 +115,7 @@ export const ScannerStyles = StyleSheet.create({
   },
 });
 
-//add student styles
+//add studentsscreen style and Home screen style
 export const StudentsStyles = StyleSheet.create({
   container: {
     padding: 10,
@@ -141,7 +126,7 @@ export const StudentsStyles = StyleSheet.create({
   main: {
     width: 300,
     height: 200,
-    backgroundColor: "white",
+    backgroundColor: "#FAF9F6",
     marginBottom: 10,
   },
   OuterView: {

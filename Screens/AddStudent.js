@@ -4,12 +4,17 @@ import { TextField } from "../Components/textField";
 import React, { useState } from "react";
 import { AddStudentApi } from "../AxiosFetchAPIS/StudentApi's";
 import ButtonLarge from "../Components/ButtonLarge";
+import { GlobalContext } from "../StateManagement/GlobalProvider";
 
 export default function AddStudent({ navigation }) {
   const [Name, setName] = useState("");
   const [studentId, setStudentID] = useState("");
   const [Phone, setPhone] = useState("");
   const [Email, setEmail] = useState("");
+
+  // state management
+  const { GlobalSetName, GlobalSetStudentID, GlobalSetPhone, GlobalSetEmail } =
+    React.useContext(GlobalContext);
 
   const Add = () => {
     AddStudentApi(Name, studentId, Email, Phone);
@@ -19,13 +24,15 @@ export default function AddStudent({ navigation }) {
   const handleTextChange = (newText) => {
     // Remove any non-numeric characters from the input
     const numericValue = newText.replace(/[^0-9]/g, "");
-    const phone = numericValue.slice(0, 11);
-    setPhone(phone);
+    const phone1 = numericValue.slice(0, 11);
+    setPhone(phone1);
+    GlobalSetPhone((prevState) => ({ ...prevState, phone: Phone }));
   };
   const handleTextChange1 = (newText) => {
     // Remove any numeric from the input
-    const numericValue = newText.replace(/[^A-Z-' ']/g, "");
-    setName(numericValue);
+    const name1 = newText.replace(/[^A-Z-' ']/g, "");
+    setName(name1);
+    GlobalSetName((prevState) => ({ ...prevState, name: Name }));
   };
 
   return (
@@ -44,14 +51,26 @@ export default function AddStudent({ navigation }) {
       <TextField
         label={"e.g.sp21-bcs-088"}
         value={studentId}
-        onChangeText={(studentId) => setStudentID(studentId)}
+        onChangeText={(studentId) => {
+          setStudentID(studentId);
+          GlobalSetStudentID((prevState) => ({
+            ...prevState,
+            id: studentId,
+          }));
+        }}
       />
 
       <Text style={AddStudstyles.text}>Email</Text>
       <TextField
         label={"e.g.sami686@gmail.com"}
         value={Email}
-        onChangeText={(Email) => setEmail(Email)}
+        onChangeText={(Email) => {
+          setEmail(Email);
+          GlobalSetEmail((prevState) => ({
+            ...prevState,
+            email: Email,
+          }));
+        }}
       />
 
       <Text style={AddStudstyles.text}>Phone</Text>

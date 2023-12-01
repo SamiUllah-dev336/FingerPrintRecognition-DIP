@@ -1,18 +1,8 @@
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Alert,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
-import axios from "axios";
+import { Text, KeyboardAvoidingView, Platform } from "react-native";
 import { AddStudstyles, styles } from "../style/styles";
 import { TextField } from "../Components/textField";
 import React, { useState } from "react";
-//import ButtonLarge from "../Components/ButtonLarge";
-
-import { AddStudentApi } from "../AxiosFetchAPIS/AddStudentApi";
+import { AddStudentApi } from "../AxiosFetchAPIS/StudentApi's";
 import ButtonLarge from "../Components/ButtonLarge";
 
 export default function AddStudent({ navigation }) {
@@ -68,7 +58,7 @@ export default function AddStudent({ navigation }) {
       <TextField
         label={"e.g.03089789783"}
         value={Phone}
-        onChangeText={(Phone) => setPhone(Phone)}
+        onChangeText={handleTextChange}
         keybtype={"number-pad"}
       />
 

@@ -1,12 +1,13 @@
-import { View, Text } from "react-native";
-import { styles } from "../style/styles";
+import { View, Text, Image } from "react-native";
+import { HomeStyles } from "../style/styles";
+import ButtonLarge from "../Components/ButtonLarge";
 
 export default function HomeScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={{ fontFamily: "Poppins", color: "white" }}>
-        I am home screen
-      </Text>
+    <View style={HomeStyles.container}>
+      <View style={HomeStyles.student}></View>
+      <ButtonLarge />
+      <ButtonLarge />
     </View>
   );
 }

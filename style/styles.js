@@ -19,6 +19,22 @@ export const AddStudstyles = StyleSheet.create({
     marginLeft: 30,
   },
 });
+
+export const HomeStyles = StyleSheet.create({
+  container: {
+    backgroundColor: "black",
+    flex: 1,
+    alignItems: "center",
+  },
+  student: {
+    marginTop: 10,
+    width: "70%",
+    height: "30%",
+    backgroundColor: "white",
+    borderWidth: 1,
+    borderRadius: 5,
+  },
+});
 // team screen stylesheet
 export const TeamStyles = StyleSheet.create({
   container: {
@@ -115,7 +131,32 @@ export const ScannerStyles = StyleSheet.create({
 });
 
 //add student styles
-export const StudentsStyles = StyleSheet.create({});
+export const StudentsStyles = StyleSheet.create({
+  container: {
+    padding: 10,
+    backgroundColor: "black",
+    flex: 1,
+    alignItems: "center",
+  },
+  main: {
+    width: 300,
+    height: 200,
+    backgroundColor: "white",
+    marginBottom: 10,
+  },
+  OuterView: {
+    flexDirection: "row",
+    padding: 10,
+    justifyContent: "space-around",
+  },
+  heading: {
+    fontFamily: "Poppins-exbold",
+    textDecorationLine: "underline",
+  },
+  content: {
+    fontFamily: "Poppins-medium",
+  },
+});
 
 export const AboutStyles = StyleSheet.create({
   container: {

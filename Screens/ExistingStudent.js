@@ -1,15 +1,8 @@
 import { Camera, CameraType } from "expo-camera";
 import { useState } from "react";
-import { ScannerStyles } from "../style/styles";
+import { ScannerStyles, styles } from "../style/styles";
 
-import {
-  Button,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  Image,
-} from "react-native";
+import { Button, Text, TouchableOpacity, View } from "react-native";
 
 export default function ExistingStudent({ navigation }) {
   const [camera, setCamera] = useState(null);

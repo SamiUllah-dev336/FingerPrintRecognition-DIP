@@ -128,6 +128,7 @@ export const StudentsStyles = StyleSheet.create({
     height: 200,
     backgroundColor: "#FAF9F6",
     marginBottom: 10,
+    borderRadius: 10,
   },
   OuterView: {
     flexDirection: "row",
@@ -140,6 +141,16 @@ export const StudentsStyles = StyleSheet.create({
   },
   content: {
     fontFamily: "Poppins-medium",
+  },
+  button: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  img: {
+    width: 300,
+    height: 200,
+    resizeMode: "cover",
+    borderRadius: 10,
   },
 });
 

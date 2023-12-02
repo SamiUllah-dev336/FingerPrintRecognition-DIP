@@ -26,13 +26,13 @@ export default function AddStudent({ navigation }) {
     const numericValue = newText.replace(/[^0-9]/g, "");
     const phone1 = numericValue.slice(0, 11);
     setPhone(phone1);
-    GlobalSetPhone((prevState) => ({ ...prevState, phone: Phone }));
+    GlobalSetPhone((prevState) => ({ ...prevState, phone: phone1 }));
   };
   const handleTextChange1 = (newText) => {
     // Remove any numeric from the input
     const name1 = newText.replace(/[^A-Z-' ']/g, "");
     setName(name1);
-    GlobalSetName((prevState) => ({ ...prevState, name: Name }));
+    GlobalSetName((prevState) => ({ ...prevState, name: name1 }));
   };
 
   return (

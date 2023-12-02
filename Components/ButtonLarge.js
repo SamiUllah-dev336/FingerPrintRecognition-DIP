@@ -1,35 +1,8 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
 export default function ButtonLarge({ head, navigation, ChangeScreen, func }) {
-  if (head == "Add") {
-    return (
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          func();
-          navigation.navigate(ChangeScreen);
-        }}
-      >
-        <Text style={styles.text}>{head}</Text>
-      </TouchableOpacity>
-    );
-  } else {
-    return (
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => {
-          navigation.navigate(ChangeScreen);
-        }}
-      >
-        <Text style={styles.text}>{head}</Text>
-      </TouchableOpacity>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  button: {
-    backgroundColor: "lightblue",
+  const button = {
+    backgroundColor: head == "Student Detail" ? "purple" : "lightblue",
     borderWidth: 1,
     marginTop: 10,
     borderRadius: 10,
@@ -37,10 +10,35 @@ const styles = StyleSheet.create({
     height: "8%",
     alignItems: "center",
     justifyContent: "center",
-  },
-  text: {
+  };
+  const text = {
     fontFamily: "Poppins",
-    color: "black",
+    color: head == "Student Detail" ? "white" : "black",
     fontSize: 20,
-  },
-});
+  };
+
+  if (head == "Add") {
+    return (
+      <TouchableOpacity
+        style={button}
+        onPress={() => {
+          func();
+          navigation.navigate(ChangeScreen);
+        }}
+      >
+        <Text style={text}>{head}</Text>
+      </TouchableOpacity>
+    );
+  } else {
+    return (
+      <TouchableOpacity
+        style={button}
+        onPress={() => {
+          navigation.navigate(ChangeScreen);
+        }}
+      >
+        <Text style={text}>{head}</Text>
+      </TouchableOpacity>
+    );
+  }
+}

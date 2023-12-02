@@ -1,13 +1,8 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function ButtonLarge({ head, navigation, ChangeScreen }) {
+export default function ButtonMedium({ head }) {
   return (
-    <TouchableOpacity
-      style={styles.button}
-      onPress={() => {
-        navigation.navigate(ChangeScreen);
-      }}
-    >
+    <TouchableOpacity style={styles.button}>
       <Text style={styles.text}>{head}</Text>
     </TouchableOpacity>
   );
@@ -15,18 +10,18 @@ export default function ButtonLarge({ head, navigation, ChangeScreen }) {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "lightblue",
+    backgroundColor: "purple",
     borderWidth: 1,
-    marginTop: 10,
+    margin: 10,
     borderRadius: 10,
-    width: "85%",
-    height: "8%",
+    width: "40%",
+    height: "35%",
     alignItems: "center",
     justifyContent: "center",
   },
   text: {
     fontFamily: "Poppins",
-    color: "black",
+    color: "white",
     fontSize: 20,
   },
 });

@@ -50,7 +50,7 @@ export default function HomeScreen({ navigation }) {
         <CustomText heading="Phone" content={GlobalPhone.phone} />
         <CustomText heading="Email" content={GlobalEmail.email} />
       </View>
-      <ButtonLarge head={`${GlobalName.name} Detail`} />
+      <ButtonLarge head={`${GlobalName.name} Detail`} info="Detail" />
       <View style={StudentsStyles.button}>
         <ButtonMedium head="Issue" />
         <ButtonMedium head="Return" />

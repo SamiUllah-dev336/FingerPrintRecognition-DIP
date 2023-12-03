@@ -1,8 +1,14 @@
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
-export default function ButtonLarge({ head, navigation, ChangeScreen, func }) {
+export default function ButtonLarge({
+  head,
+  navigation,
+  ChangeScreen,
+  func,
+  info, // It is for only comparison on one screen for changing
+}) {
   const button = {
-    backgroundColor: head == "Student Detail" ? "purple" : "lightblue",
+    backgroundColor: info == "Detail" ? "purple" : "lightblue",
     borderWidth: 1,
     marginTop: 10,
     borderRadius: 10,
@@ -13,7 +19,7 @@ export default function ButtonLarge({ head, navigation, ChangeScreen, func }) {
   };
   const text = {
     fontFamily: "Poppins",
-    color: head == "Student Detail" ? "white" : "black",
+    color: info == "Detail" ? "white" : "black",
     fontSize: 20,
   };
 
